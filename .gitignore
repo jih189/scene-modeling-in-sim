@@ -1,0 +1,3 @@
+CMakelists.txt
+*.pyc
+.ipynb_checkpoints/
