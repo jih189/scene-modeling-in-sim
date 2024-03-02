@@ -69,10 +69,10 @@ mobile_base_controller:
   pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
   twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
   enable_odom_tf: true
-  wheel_radius: 0.06
-  wheel_separation: 0.375
+  wheel_radius: 0.03025
+  wheel_separation: 0.37476
   cmd_vel_timeout: 0.25
-  publish_rate: 50
+  publish_rate: 100
   open_loop: true
   
 
