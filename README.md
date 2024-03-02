@@ -8,17 +8,17 @@ The Fetch robot is a mobile manipulator designed to automate material handling a
 
 ## Usage
 
-1. [<h2> Prepare the environment </h2>](documents/prepare_environment.md)
+### [Prepare the environment](documents/prepare_environment.md)
 
-    Build the docker image and run the docker container.
+Build the docker image and run the docker container.
 
-2. [<h2> Run the simulation </h2>](documents/run_simulation.md)
+### [Run the simulation](documents/run_simulation.md)
 
-    Run the simulation in the docker container.
+Run the simulation in the docker container.
 
-3. [<h2> Add Objects to the Scene </h2>](documents/add_objects_to_scene.md)
+### [Add Objects to the Scene](documents/add_objects_to_scene.md)
 
-    Add objects to the scene for modeling and manipulation planning.
+Add objects to the scene for modeling and manipulation planning.
 
 ## Authors
 Jiaming Hu
