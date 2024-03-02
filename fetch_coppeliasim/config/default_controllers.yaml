@@ -49,10 +49,10 @@ arm_with_torso_controller:
     - wrist_flex_joint
     - wrist_roll_joint
 
-gripper_controller:
-  type: "position_controllers/JointTrajectoryController"
-  joints:
-    - r_gripper_finger_joint
+# gripper_controller:
+#   type: "position_controllers/JointTrajectoryController"
+#   joints:
+#     - r_gripper_finger_joint
 
 head_controller:
   type: "position_controllers/JointTrajectoryController"
@@ -79,6 +79,9 @@ mobile_base_controller:
 # cartesian_wrist_controller:
 #   type: "robot_controllers/CartesianTwistController"
 
+gripper_controller:
+  type: "position_controllers/GripperActionController"
+  joint: r_gripper_finger_joint
 
 # gripper_controller:
 #  type: position_controllers/GripperActionController
