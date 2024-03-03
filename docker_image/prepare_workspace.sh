@@ -52,7 +52,8 @@ case $gpuname in
 	#conda run -n contact_graspnet_env sh compile_pointnet_tfops.sh
         ;;
         *)
-        echo "unknown gpu, so no way to compile in conda"
+        cd /root/catkin_ws/src/scene_modeling/ros_tensorflow/src/contact_graspnet
+	conda run -n contact_graspnet_30 sh compile_pointnet_tfops.sh
         ;;
 esac
 
