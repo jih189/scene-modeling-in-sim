@@ -93,4 +93,18 @@
     <!-- fake object segmentation -->
     <node pkg="fetch_coppeliasim" name="object_segmentation" type="fake_object_segmentation.py" output="screen" />
 
+    <!-- Using RtabMap for Mapping -->
+    <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="--delete_db_on_start">
+        <param name="subscribe_depth" type="bool" value="true"/>
+        <param name="subscribe_scan" type="bool" value="true"/>
+
+        <!-- The RGB image needs to be rectified when subscribed to depth -->
+        <remap from='rgb/image' to='/head_camera/rgb/image_rect'/>
+        <remap from='depth/image' to='/head_camera/depth/image_raw'/>
+        <!-- Adding IMU data -->
+        <remap from='imu' to='sensor_msgs/imu' />
+        <!-- ODOM is being fed in the correct name -->
+        <!-- Add global -->
+    </node>
+
 </launch>
