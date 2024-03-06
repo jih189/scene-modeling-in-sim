@@ -199,7 +199,7 @@ RUN python -m pip install networkx scikit-learn tqdm trimesh==3.21.0 joblib
 RUN python -m pip install python-fcl --upgrade
 
 # install packages for navigation
-RUN apt-get install -y ros-melodic-map-server ros-melodic-move-base ros-melodic-amcl ros-melodic-slam-karto
+RUN apt-get install -y ros-melodic-map-server ros-melodic-move-base ros-melodic-amcl ros-melodic-slam-karto ros-melodic-compressed-depth-image-transport
 
 # put the script to prepare the workspace
 COPY prepare_workspace.sh $HOME
