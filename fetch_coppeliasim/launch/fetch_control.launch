@@ -93,13 +93,14 @@
     <!-- fake object segmentation -->
     <node pkg="fetch_coppeliasim" name="object_segmentation" type="fake_object_segmentation.py" output="screen" />
 
+    <!-- byte swap on depth image -->
+    <node pkg="fetch_coppeliasim" name="depth_byte_swap" type="depth_byte_swap.py" output="screen" />
+
     <node pkg="nodelet" type="nodelet" name="rtabmap_sync" args="standalone rtabmap_ros/rgbd_sync" output="screen">
-        <!-- <param name="compressed_rate" type="double" value="5"/> -->
         <param name="queue_size" type="int" value="10"/>
         <param name="approx_sync" type="bool" value="true"/>
-        <!-- The RGB image needs to be rectified when subscribed to depth -->
         <remap from='rgb/image' to='/head_camera/rgb/image_raw'/>
-        <remap from='depth/image' to='/head_camera/depth/image_raw'/>
+        <remap from='depth/image' to='head_camera/depth/image_corrected'/>
         <remap from='rgb/camera_info' to='/head_camera/rgb/camera_info'/>
     </node>
 
