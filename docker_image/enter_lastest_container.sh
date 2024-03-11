@@ -1,8 +1,9 @@
 #!/bin/bash
-container_count=$(docker ps | wc -l | awk '{print $1-1}')
+IMAGE_NAME="scene_modeling"
+container_count=$(docker ps | grep $IMAGE_NAME | wc -l)
 if [ $container_count -eq 1 ]; then
-	last_container_id=$(docker ps --format "{{.ID}}" | head -n 1)
-	docker exec -e DISPLAY=$DISPLAY -it $last_container_id /bin/bash
+	last_container_id=$(docker container ls  --filter=ancestor=$IMAGE_NAME --format "{{.ID}}")
+	docker exec -it $last_container_id /bin/bash
 else
-	echo "you have $container_count container, you should have only one!!"
+	echo "you have $container_count container with image $IMAGE_NAME, you should have only one!!"
 fi
